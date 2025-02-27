@@ -2,7 +2,7 @@ use anyhow::Result;
 
 pub fn validate_tech_stack(tech_stack: &str) -> bool {
     // 当前支持的技术栈
-    let supported_stacks = ["go", "java", "python"];
+    let supported_stacks = ["go", "java", "python", "rust"];
     supported_stacks.contains(&tech_stack)
 }
 

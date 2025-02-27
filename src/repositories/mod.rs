@@ -18,6 +18,7 @@ pub fn get_template_content(tech_stack: &str) -> Result<String> {
         "python" => Ok(include_str!("../../templates/python_template.md").to_string()),
         "java" => Ok(include_str!("../../templates/java_template.md").to_string()),
         "go" => Ok(include_str!("../../templates/go_template.md").to_string()),
+        "rust" => Ok(include_str!("../../templates/rust_template.md").to_string()),
         _ => Err(anyhow::anyhow!("Unsupported tech stack: {}", tech_stack)),
     }
 }
@@ -27,6 +28,7 @@ pub fn get_gitignore_template(tech_stack: &str) -> Result<String> {
         "python" => Ok(include_str!("../../templates/python.gitignore").to_string()),
         "java" => Ok(include_str!("../../templates/java.gitignore").to_string()),
         "go" => Ok(include_str!("../../templates/go.gitignore").to_string()),
+        "rust" => Ok(include_str!("../../templates/rust.gitignore").to_string()),
         _ => Err(anyhow::anyhow!("Unsupported tech stack: {}", tech_stack)),
     }
 }

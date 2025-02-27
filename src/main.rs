@@ -9,7 +9,19 @@ use log::{debug, info};
 fn main() -> Result<()> {
     env_logger::init();
     
-    let (tech_stack, project_name, verbose) = parse_args();
+    let (tech_stack_opt, project_name_opt, verbose, list_stacks) = parse_args();
+    
+    if list_stacks {
+        println!("Supported technology stacks:");
+        println!("- go");
+        println!("- java");
+        println!("- python");
+        println!("- rust");
+        return Ok(());
+    }
+
+    let tech_stack = tech_stack_opt.ok_or_else(|| anyhow::anyhow!("Tech stack must be specified"))?;
+    let project_name = project_name_opt.ok_or_else(|| anyhow::anyhow!("Project name must be specified"))?;
     
     if verbose {
         debug!("Verbose mode enabled");
