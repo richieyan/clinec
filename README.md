@@ -32,7 +32,7 @@ clinec -t go my_go_project
 
 This will generate:
 - `.clinerules` file with technology-specific rules
-- `projectBrief.md` (empty)
+- `projectBrief.md`
 - `.gitignore` file specific to the technology stack
 
 ## Contributing
