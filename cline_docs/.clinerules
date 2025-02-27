@@ -1,0 +1,47 @@
+# Project Configuration
+
+## Tech Stack
+- Rust 2021+ Edition
+- clap (with derive feature) for CLI parsing
+- colored for terminal styling
+- indicatif for progress tracking
+- tokio for async runtime
+- reqwest for HTTP client
+- anyhow/thiserror for error handling
+
+## Project Structure
+/src
+  /cli        # CLI command modules
+  /utils      # Utility functions
+  /config     # Configuration handlers
+  /error      # Custom error types
+/tests        # Integration tests
+/benches      # Performance benchmarks
+/docs         # Documentation
+
+## Database Migrations
+SQL files in /supabase/migrations should:  # 保留原数据库迁移结构（如不需要可删除）
+- Use sequential numbering: 001, 002, etc.
+- Include descriptive names
+- Be reviewed by Cline before execution
+Example: 001_create_users_table.sql
+
+## Development Workflow
+- Cline helps write and review code changes
+- cargo test 运行所有测试
+- cargo clippy 进行代码检查
+- cross 用于跨平台构建
+- 使用GitHub Actions进行CI/CD
+
+## Security
+DO NOT read or modify:
+- .env.* 文件
+- **/config/credentials.*
+- 任何包含敏感信息（API keys/tokens）的文件
+- Cargo.lock（如使用第三方私有源）
+
+## 补充说明
+- 使用cargo-edit管理依赖
+- 通过criterion进行性能基准测试
+- 使用tracing进行日志记录
+- 配置文件支持多种格式（JSON/YAML/TOML）
